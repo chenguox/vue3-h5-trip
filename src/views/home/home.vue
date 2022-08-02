@@ -1,13 +1,22 @@
 <template>
   <div class="home">
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="success">成功按钮</van-button>
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <van-nav-bar title="旅途首页" />
+    <div class="banner">
+      <img src="@/assets/img/home/banner.webp" alt="" />
+    </div>
   </div>
 </template>
 
 <script setup></script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.home {
+  --van-nav-bar-title-text-color: var(--primary-color) !important;
+
+  .banner {
+    img {
+      width: 100%;
+    }
+  }
+}
+</style>
