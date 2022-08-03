@@ -4,14 +4,17 @@
     <div class="banner">
       <img src="@/assets/img/home/banner.webp" alt="" />
     </div>
+    <home-search-box />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import HomeSearchBox from "./cpns/home-search-box.vue";
+</script>
 
 <style lang="less" scoped>
 .home {
-  --van-nav-bar-title-text-color: var(--primary-color) !important;
+  --van-nav-bar-title-text-color: var(--primary-color);
 
   .banner {
     img {
@@ -20,3 +23,4 @@
   }
 }
 </style>
+src/App.vue
