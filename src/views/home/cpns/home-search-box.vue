@@ -1,7 +1,7 @@
 <template>
   <div class="search-box">
     <div class="location">
-      <div class="city" @click="cityClick">广州</div>
+      <div class="city" @click="cityClick">{{ currentCity.cityName }}</div>
       <div class="position" @click="positionClick">
         <span class="text">我的位置</span>
         <img src="@/assets/img/home/icon_location.png" alt="" />
@@ -12,12 +12,17 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import useCityStore from "@/stores/modules/city";
 
 const router = useRouter();
 
 const cityClick = () => {
   router.push("/city");
 };
+
+const cityStore = useCityStore();
+const { currentCity } = storeToRefs(cityStore);
 
 const positionClick = () => {
   navigator.geolocation.getCurrentPosition(

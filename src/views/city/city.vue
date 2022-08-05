@@ -19,8 +19,8 @@
     </div>
 
     <div class="content">
-      <template v-for="(value, key, index) in currentGroup">
-        {{ value }}
+      <template v-for="(value, key, index) in allCities">
+        <city-group v-show="tabActive === key" :groupData="value" />
       </template>
     </div>
   </div>
@@ -31,6 +31,7 @@ import { ref, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import useCityStore from "@/stores/modules/city";
+import CityGroup from "./cpns/city-group.vue";
 
 const router = useRouter();
 
@@ -53,6 +54,10 @@ const currentGroup = computed(() => allCities.value[tabActive.value]);
 
 <style lang="less" scoped>
 .city {
+  .top {
+    position: relative;
+    z-index: 9;
+  }
   .content {
     height: calc(100vh - 98px);
     overflow-y: auto;
