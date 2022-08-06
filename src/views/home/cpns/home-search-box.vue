@@ -16,7 +16,7 @@
         <span class="time">{{ startDate }}</span>
       </div>
       <div class="count">
-        <span>共17晚</span>
+        <span>共{{ stayCount }}晚</span>
       </div>
       <div class="end item">
         <span class="tip">离店</span>
@@ -31,6 +31,30 @@
       :show-confirm="false"
       @confirm="onCalendarConfirm"
     />
+
+    <!-- 价格/人数选择 -->
+    <div class="price-counter bottom-gray-line">
+      <div class="price-tip">价格不限</div>
+      <div class="counter-tip">人数不限</div>
+    </div>
+
+    <!-- 关键字/位置/名宿 -->
+    <div class="keyword bottom-gray-line">关键字/位置/名宿</div>
+
+    <!-- 快捷选择 -->
+    <div class="quick-select">
+      <template v-for="(item, index) in hotSuggests" :key="index">
+        <div
+          class="select-item"
+          :style="{
+            backgroundColor: item.tagText.background.color,
+            color: item.tagText.color,
+          }"
+        >
+          {{ item.tagText.text }}
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -39,7 +63,8 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import useCityStore from "@/stores/modules/city";
-import { formatMonthDay, getAfterDay } from "@/utils/format_date";
+import useHomeStore from "@/stores/modules/home";
+import { formatMonthDay, getAfterDay, getDiffDays } from "@/utils/format_date";
 
 const router = useRouter();
 
@@ -69,6 +94,7 @@ const positionClick = () => {
 // 日期范围的处理
 const startDate = ref(formatMonthDay(new Date()));
 const endDate = ref(formatMonthDay(getAfterDay(new Date(), 1)));
+const stayCount = ref(1);
 
 const showCalendar = ref(false);
 const onCalendarConfirm = (dates) => {
@@ -77,10 +103,15 @@ const onCalendarConfirm = (dates) => {
   const selectEndDate = dates[1];
   startDate.value = formatMonthDay(selectStartDate);
   endDate.value = formatMonthDay(selectEndDate);
-
+  stayCount.value = getDiffDays(selectStartDate, selectEndDate);
   // 2、隐藏日历
   showCalendar.value = false;
 };
+
+// 热门建议
+const homeStore = useHomeStore();
+homeStore.fetchAllCitiesData();
+const { hotSuggests } = storeToRefs(homeStore);
 </script>
 
 <style lang="less" scoped>
@@ -146,6 +177,49 @@ const onCalendarConfirm = (dates) => {
       line-height: 45px;
       color: #666;
       font-size: 12px;
+    }
+  }
+
+  .price-counter {
+    display: flex;
+    // align-items: center;
+
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+
+    .price-tip {
+      flex: 1;
+    }
+
+    .counter-tip {
+      width: 120px;
+      border-left: 1px solid var(--line-color);
+      padding-left: 20px;
+    }
+  }
+
+  .keyword {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+    padding: 0 20px;
+  }
+
+  .quick-select {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 20px;
+    .select-item {
+      height: 22px;
+      line-height: 22px;
+      padding: 0 8px;
+      font-size: 12px;
+      border-radius: 14px;
+      margin: 5px;
     }
   }
 }
