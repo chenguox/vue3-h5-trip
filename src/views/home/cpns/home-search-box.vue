@@ -55,6 +55,12 @@
         </div>
       </template>
     </div>
+
+    <!-- 搜索按钮 -->
+    <div class="search-btn">
+      <div class="btn">开始搜索</div>
+      <div class="tip">民宿预订服务由XX网提供</div>
+    </div>
   </div>
 </template>
 
@@ -110,7 +116,6 @@ const onCalendarConfirm = (dates) => {
 
 // 热门建议
 const homeStore = useHomeStore();
-homeStore.fetchAllCitiesData();
 const { hotSuggests } = storeToRefs(homeStore);
 </script>
 
@@ -220,6 +225,33 @@ const { hotSuggests } = storeToRefs(homeStore);
       font-size: 12px;
       border-radius: 14px;
       margin: 5px;
+    }
+  }
+
+  .search-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      width: 342px;
+      height: 38px;
+      max-height: 50px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 38px;
+      text-align: center;
+      border-radius: 20px;
+      color: #fff;
+      background-image: var(--theme-linear-gradient);
+    }
+
+    .tip {
+      height: 32px;
+      font-size: 9px;
+      line-height: 32px;
+      color: #ccc;
     }
   }
 }
