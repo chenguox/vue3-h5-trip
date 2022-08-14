@@ -33,10 +33,8 @@ const props = defineProps({
 });
 
 const itemScore = computed(() => {
-  return props.itemData.commentScore;
+  return Number(props.itemData.commentScore);
 });
-
-console.log(props);
 </script>
 
 <style lang="less" scoped>
