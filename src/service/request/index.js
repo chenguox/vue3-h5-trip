@@ -1,6 +1,8 @@
 import axios from "axios";
-
 import { BASE_URL, TIMEOUT } from "./config";
+import useMainStore from "@/stores/modules/main";
+
+const mainStore = useMainStore();
 
 class GXRequest {
   constructor(baseURL, timeout = 10000) {
@@ -8,6 +10,29 @@ class GXRequest {
       baseURL,
       timeout,
     });
+
+    // 请求拦截
+    this.instance.interceptors.request.use(
+      (config) => {
+        mainStore.isLoading = true;
+        return config;
+      },
+      (err) => {
+        return err;
+      }
+    );
+
+    // 响应拦截
+    this.instance.interceptors.response.use(
+      (res) => {
+        mainStore.isLoading = false;
+        return res;
+      },
+      (err) => {
+        mainStore.isLoading = false;
+        return err;
+      }
+    );
   }
 
   request(config) {
