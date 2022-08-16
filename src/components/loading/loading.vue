@@ -1,5 +1,5 @@
 <template>
-  <div class="loading" v-if="mainStore.isLoading" @click="loadingClick">
+  <div class="loading" v-show="mainStore.isLoading" @click="loadingClick">
     <div class="bg">
       <img src="@/assets/img/home/full-screen-loading.gif" alt="" />
     </div>

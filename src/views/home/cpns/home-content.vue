@@ -6,10 +6,12 @@
         <house-item-v3
           v-if="item.discoveryContentType === 3"
           :itemData="item.data"
+          @click="handleClick(item.data)"
         />
         <house-item-v9
           v-else-if="item.discoveryContentType === 9"
           :itemData="item.data"
+          @click="handleClick(item.data)"
         />
       </template>
     </div>
@@ -22,9 +24,18 @@ import HouseItemV9 from "@/components/house-item-v9/house-item-v9.vue";
 
 import useHomeStore from "@/stores/modules/home";
 import { storeToRefs } from "pinia";
+import { useRouter } from "vue-router";
 
 const homeStore = useHomeStore();
 const { houselist } = storeToRefs(homeStore);
+
+// 跳转商品详情
+const router = useRouter();
+const handleClick = (item) => {
+  router.push({
+    path: "/detail/" + item.houseId,
+  });
+};
 </script>
 
 <style lang="less" scoped>

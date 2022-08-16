@@ -10,8 +10,6 @@
     </div>
     <home-categories />
     <home-content />
-
-    <div class="bottom"></div>
   </div>
 </template>
 
@@ -49,6 +47,8 @@ const isShowSearchBar = computed(() => {
 .home {
   --van-nav-bar-title-text-color: var(--primary-color);
 
+  padding-bottom: 50px;
+
   .banner {
     img {
       width: 100%;
@@ -65,10 +65,6 @@ const isShowSearchBar = computed(() => {
   height: 45px;
   padding: 10px 16px;
   background-color: #fff;
-}
-
-.bottom {
-  margin-top: 200px;
 }
 </style>
 src/App.vue

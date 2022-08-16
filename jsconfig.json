@@ -4,19 +4,10 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "jsx": "preserve",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  },
-  "vueCompilerOptions": {
-    "experimentalDisableTemplateSupport": true
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   }
 }
