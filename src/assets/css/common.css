@@ -7,6 +7,7 @@
   /* --van-tabbar-item-icon-size: 30px !important; */
 
   /* 全局修改: 修改search样式 */
+  --van-primary-color: var(--primary-color);
   --van-search-left-icon-color: var(--primary-color) !important;
 }
 

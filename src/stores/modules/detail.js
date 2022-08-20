@@ -3,13 +3,13 @@ import { getDetailInfos } from "@/service";
 
 const useDetailStore = defineStore("detail", {
   state: () => ({
-    datailInfos: {},
+    // 轮播图数据
+    swipeData: [],
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
       const res = await getDetailInfos(houseId);
-      console.log(res);
-      this.datailInfos = res.data;
+      this.swipeData = res.data.mainPart.topModule.housePicture.housePics;
     },
   },
 });
