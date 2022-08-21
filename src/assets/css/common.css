@@ -27,3 +27,10 @@ body {
 .bottom-gray-line {
   border-bottom: 1px solid var(--line-color);
 }
+
+.icon_check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(../img/detail/icon_check.png) 0 0 / 100% 100%;
+}

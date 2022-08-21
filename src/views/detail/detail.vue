@@ -8,6 +8,7 @@
     />
     <detail-swipe />
     <detail-infos />
+    <detail-facility />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import useDetailStore from "@/stores/modules/detail";
 
 import DetailSwipe from "./cpn/detail-01-swipe.vue";
 import DetailInfos from "./cpn/detail-02-infos.vue";
+import DetailFacility from "./cpn/detail-03-facility.vue";
 
 const router = useRouter();
 const route = useRoute();
@@ -35,4 +37,8 @@ const onClickLeft = () => {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.detail {
+  margin-bottom: 100px;
+}
+</style>

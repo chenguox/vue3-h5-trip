@@ -13,6 +13,8 @@ const useDetailStore = defineStore("detail", {
     commentBrief: {},
     // 详情周边
     nearByPosition: {},
+    // 房屋设施
+    houseFacility: {},
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
@@ -29,6 +31,8 @@ const useDetailStore = defineStore("detail", {
       this.houseTags = houseTags;
       this.commentBrief = commentBrief;
       this.nearByPosition = nearByPosition;
+      const { facilityModule } = res.data.mainPart.dynamicModule;
+      this.houseFacility = facilityModule.houseFacility;
       console.log(this.commentBrief);
     },
   },
