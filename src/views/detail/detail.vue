@@ -10,6 +10,7 @@
     <detail-infos />
     <detail-facility />
     <detail-landlord />
+    <detail-comment />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import DetailSwipe from "./cpn/detail-01-swipe.vue";
 import DetailInfos from "./cpn/detail-02-infos.vue";
 import DetailFacility from "./cpn/detail-03-facility.vue";
 import DetailLandlord from "./cpn/detail-04-landlord.vue";
+import DetailComment from "./cpn/detail-05-comment.vue";
 
 const router = useRouter();
 const route = useRoute();

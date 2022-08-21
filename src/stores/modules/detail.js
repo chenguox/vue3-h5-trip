@@ -17,6 +17,8 @@ const useDetailStore = defineStore("detail", {
     houseFacility: {},
     // 房东介绍
     landlordModule: {},
+    // 热门评论
+    commentModule: {},
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
@@ -33,10 +35,11 @@ const useDetailStore = defineStore("detail", {
       this.houseTags = houseTags;
       this.commentBrief = commentBrief;
       this.nearByPosition = nearByPosition;
-      const { facilityModule, landlordModule } =
+      const { facilityModule, landlordModule, commentModule } =
         res.data.mainPart.dynamicModule;
       this.houseFacility = facilityModule.houseFacility;
       this.landlordModule = landlordModule;
+      this.commentModule = commentModule;
       console.log(this.commentBrief);
     },
   },
