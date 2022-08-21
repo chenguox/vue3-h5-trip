@@ -7,6 +7,7 @@
       @click-left="onClickLeft"
     />
     <detail-swipe />
+    <detail-infos />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import { useRoute, useRouter } from "vue-router";
 import useDetailStore from "@/stores/modules/detail";
 
 import DetailSwipe from "./cpn/detail-01-swipe.vue";
+import DetailInfos from "./cpn/detail-02-infos.vue";
 
 const router = useRouter();
 const route = useRoute();
