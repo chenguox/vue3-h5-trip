@@ -9,6 +9,7 @@
     <detail-swipe />
     <detail-infos />
     <detail-facility />
+    <detail-landlord />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import useDetailStore from "@/stores/modules/detail";
 import DetailSwipe from "./cpn/detail-01-swipe.vue";
 import DetailInfos from "./cpn/detail-02-infos.vue";
 import DetailFacility from "./cpn/detail-03-facility.vue";
+import DetailLandlord from "./cpn/detail-04-landlord.vue";
 
 const router = useRouter();
 const route = useRoute();
