@@ -84,10 +84,13 @@ const { commentModule } = storeToRefs(detailStore);
 
 <style lang="less" scoped>
 .comment-inner {
+  padding: 10px 0;
+
   .header {
     display: flex;
     .left {
       display: flex;
+      align-items: center;
       .score {
         width: 65px;
         height: 100%;

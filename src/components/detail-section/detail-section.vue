@@ -22,7 +22,7 @@ defineProps({
   },
   moreText: {
     type: String,
-    default: "尾部",
+    default: "",
   },
 });
 </script>
