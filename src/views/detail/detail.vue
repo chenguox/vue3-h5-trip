@@ -14,13 +14,13 @@
       <detail-comment />
       <detail-notice />
       <detail-map />
+      <detail-intro />
     </div>
   </div>
 </template>
 
 <script setup>
-import { storeToRefs } from "pinia";
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import useDetailStore from "@/stores/modules/detail";
 
@@ -31,6 +31,7 @@ import DetailLandlord from "./cpns/detail-04-landlord.vue";
 import DetailComment from "./cpns/detail-05-comment.vue";
 import DetailNotice from "./cpns/detail-06-notice.vue";
 import DetailMap from "./cpns/detail-07-map.vue";
+import DetailIntro from "./cpns/detail-08-intro.vue";
 
 const router = useRouter();
 const route = useRoute();

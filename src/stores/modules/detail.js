@@ -23,6 +23,8 @@ const useDetailStore = defineStore("detail", {
     orderRules: {},
     // 位置周边
     positionModule: {},
+    // 价格说明
+    introductionModule: {},
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
@@ -31,7 +33,7 @@ const useDetailStore = defineStore("detail", {
       return true;
     },
     setDetialInfoData(data) {
-      const { topModule, dynamicModule } = data;
+      const { topModule, dynamicModule, introductionModule } = data;
       const partOne = topModule;
       this.swipeData = partOne.housePicture.housePics;
       this.houseName = partOne.houseName;
@@ -44,6 +46,8 @@ const useDetailStore = defineStore("detail", {
       this.commentModule = partTwo.commentModule;
       this.orderRules = partTwo.rulesModule.orderRules;
       this.positionModule = partTwo.positionModule;
+      const partThree = introductionModule;
+      this.introductionModule = partThree;
     },
   },
 });
