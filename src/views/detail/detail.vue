@@ -16,6 +16,11 @@
       <detail-map />
       <detail-intro />
     </div>
+    <div class="footer">
+      <img src="@/assets/img/detail/icon_ensure.png" alt="" />
+      <div class="text">学习旅途, 永无止境!</div>
+    </div>
+    <detail-buy />
   </div>
 </template>
 
@@ -32,6 +37,7 @@ import DetailComment from "./cpns/detail-05-comment.vue";
 import DetailNotice from "./cpns/detail-06-notice.vue";
 import DetailMap from "./cpns/detail-07-map.vue";
 import DetailIntro from "./cpns/detail-08-intro.vue";
+import DetailBuy from "./cpns/detail-09-buy.vue";
 
 const router = useRouter();
 const route = useRoute();
@@ -52,5 +58,23 @@ const onClickLeft = () => {
 <style lang="less" scoped>
 .detail {
   margin-bottom: 100px;
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+
+    img {
+      width: 123px;
+    }
+
+    .text {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #7688a7;
+    }
+  }
 }
 </style>

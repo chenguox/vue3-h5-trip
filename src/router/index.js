@@ -11,6 +11,9 @@ const router = createRouter({
     {
       path: "/home",
       component: () => import("../views/home/home.vue"),
+      meta: {
+        hideTabBar: true,
+      },
     },
     {
       path: "/favor",

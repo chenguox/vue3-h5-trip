@@ -25,11 +25,14 @@ const useDetailStore = defineStore("detail", {
     positionModule: {},
     // 价格说明
     introductionModule: {},
+    // 产品价格
+    product: {},
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
       const res = await getDetailInfos(houseId);
       this.setDetialInfoData(res.data.mainPart);
+      this.setDetailPriceData(res.data.pricePart);
       return true;
     },
     setDetialInfoData(data) {
@@ -48,6 +51,9 @@ const useDetailStore = defineStore("detail", {
       this.positionModule = partTwo.positionModule;
       const partThree = introductionModule;
       this.introductionModule = partThree;
+    },
+    setDetailPriceData(data) {
+      this.product = data.priceModule.product;
     },
   },
 });
