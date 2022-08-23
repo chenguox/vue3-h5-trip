@@ -21,29 +21,29 @@ const useDetailStore = defineStore("detail", {
     commentModule: {},
     // 预定须知
     orderRules: {},
+    // 位置周边
+    positionModule: {},
   }),
   actions: {
     async fetchDetailInfosData(houseId) {
       const res = await getDetailInfos(houseId);
-      const {
-        housePicture,
-        houseName,
-        houseTags,
-        commentBrief,
-        nearByPosition,
-      } = res.data.mainPart.topModule;
-      this.swipeData = housePicture.housePics;
-      this.houseName = houseName;
-      this.houseTags = houseTags;
-      this.commentBrief = commentBrief;
-      this.nearByPosition = nearByPosition;
-      const { facilityModule, landlordModule, commentModule, rulesModule } =
-        res.data.mainPart.dynamicModule;
-      this.houseFacility = facilityModule.houseFacility;
-      this.landlordModule = landlordModule;
-      this.commentModule = commentModule;
-      this.orderRules = rulesModule.orderRules;
-      console.log(this.commentBrief);
+      this.setDetialInfoData(res.data.mainPart);
+      return true;
+    },
+    setDetialInfoData(data) {
+      const { topModule, dynamicModule } = data;
+      const partOne = topModule;
+      this.swipeData = partOne.housePicture.housePics;
+      this.houseName = partOne.houseName;
+      this.houseTags = partOne.houseTags;
+      this.commentBrief = partOne.commentBrief;
+      this.nearByPosition = partOne.nearByPosition;
+      const partTwo = dynamicModule;
+      this.houseFacility = partTwo.facilityModule.houseFacility;
+      this.landlordModule = partTwo.landlordModule;
+      this.commentModule = partTwo.commentModule;
+      this.orderRules = partTwo.rulesModule.orderRules;
+      this.positionModule = partTwo.positionModule;
     },
   },
 });
