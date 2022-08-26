@@ -87,7 +87,7 @@ const tabClick = (index) => {
   let instance = el.offsetTop;
   console.log(instance);
   if (index !== 0) {
-    instance = instance - 44;
+    instance = instance - 46;
   }
 
   detailRef.value.scrollTo({
@@ -101,7 +101,7 @@ const tabClick = (index) => {
 .detail {
   height: 100vh;
   overflow-y: auto;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 
   .tabs {
     position: fixed;
