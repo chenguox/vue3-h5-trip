@@ -48,15 +48,15 @@ Vue3-H5-Trip 是基于 vue3 + vant3 + pinia + vite2 + axios + pnpm 等主流技�
 - 暂未使用 jenkins 部署到服务器上
 - 图片预览
 
-![1661500506399.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500506399.png)![1661500536961.png](image/README/1661500536961.png)![1661500589451.png](image/README/1661500589451.png)![1661500603837.png](image/README/1661500603837.png)![1661500609013.png](image/README/1661500609013.png)![1661500615482.png](image/README/1661500615482.png)
+![1661500506399.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500506399.png)![1661500536961.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500536961.png)![1661500589451.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500589451.png)![1661500603837.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500603837.png)![1661500609013.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500609013.png)![1661500615482.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500615482.png)
 
-![1661500754714.png](image/README/1661500754714.png)
-![1661500761680.png](image/README/1661500761680.png)
+![1661500754714.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500754714.png)
+![1661500761680.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500761680.png)
 
-![1661500831496.png](image/README/1661500831496.png)
+![1661500831496.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500831496.png)
 
-![1661500839736.png](image/README/1661500839736.png)
+![1661500839736.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500839736.png)
 
-![1661500846748.png](image/README/1661500846748.png)
+![1661500846748.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500846748.png)
 
-![1661500856971.png](image/README/1661500856971.png)
+![1661500856971.png](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/5129/1661500856971.png)
