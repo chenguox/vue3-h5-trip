@@ -48,7 +48,7 @@ Vue3-H5-Trip 是基于 vue3 + vant3 + pinia + vite2 + axios + pnpm 等主流技�
 * 暂未使用 jenkins 部署到服务器上
 * 图片预览
 
-![1661500506399.png](image/README/1661500506399.png)![1661500536961.png](image/README/1661500536961.png)![1661500589451.png](image/README/1661500589451.png)![1661500603837.png](image/README/1661500603837.png)![1661500609013.png](image/README/1661500609013.png)![1661500615482.png](image/README/1661500615482.png)
+![1661500506399.png](https://raw.githubusercontent.com/chenguox/vue3-h5-trip/master/README/1661500506399.png)![1661500536961.png](image/README/1661500536961.png)![1661500589451.png](image/README/1661500589451.png)![1661500603837.png](image/README/1661500603837.png)![1661500609013.png](image/README/1661500609013.png)![1661500615482.png](image/README/1661500615482.png)
 
 ![1661500754714.png](image/README/1661500754714.png)
 ![1661500761680.png](image/README/1661500761680.png)
