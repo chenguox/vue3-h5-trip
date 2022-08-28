@@ -85,7 +85,6 @@ const tabClick = (index) => {
   const key = Object.keys(sectionEls.value)[index];
   const el = sectionEls.value[key];
   let instance = el.offsetTop;
-  console.log(instance);
   if (index !== 0) {
     instance = instance - 46;
   }

@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home" ref="homeRef">
     <van-nav-bar title="旅途首页" />
     <div class="banner">
       <img src="@/assets/img/home/banner.webp" alt="" />
     </div>
     <home-search-box />
-    <div class="search-wrapper" v-show="isShowSearchBar">
+    <div class="search-wrapper" v-if="isShowSearchBar">
       <search-bar />
     </div>
     <home-categories />
@@ -13,8 +13,13 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "home",
+};
+</script>
 <script setup>
-import { watch, ref, computed } from "vue";
+import { watch, ref, computed, onActivated } from "vue";
 import useHomeStore from "@/stores/modules/home";
 
 import HomeSearchBox from "./cpns/home-search-box.vue";
@@ -29,7 +34,8 @@ homeStore.fetchAllCitiesData();
 homeStore.fetchCategoriesData();
 homeStore.fetchHouseListData();
 
-const { isReachBottom, scrollTop } = useScroll();
+const homeRef = ref();
+const { isReachBottom, scrollTop } = useScroll(homeRef);
 watch(isReachBottom, (newValue) => {
   if (newValue) {
     homeStore.fetchHouseListData().then(() => {
@@ -41,6 +47,12 @@ watch(isReachBottom, (newValue) => {
 const isShowSearchBar = computed(() => {
   return scrollTop.value >= 360;
 });
+
+onActivated(() => {
+  homeRef.value.scrollTo({
+    top: scrollTop.value,
+  });
+});
 </script>
 
 <style lang="less" scoped>
@@ -48,6 +60,8 @@ const isShowSearchBar = computed(() => {
   --van-nav-bar-title-text-color: var(--primary-color);
 
   padding-bottom: 50px;
+  height: 100vh;
+  overflow-y: auto;
 
   .banner {
     img {

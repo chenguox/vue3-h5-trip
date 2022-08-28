@@ -20,7 +20,6 @@ const useHomeStore = defineStore("home", {
     },
     async fetchCategoriesData() {
       const res = await getHomeCategories();
-      console.log(res);
       this.categories = res.data;
     },
     async fetchHouseListData() {
